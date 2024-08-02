@@ -1,12 +1,25 @@
 import Task from './Task'
 
 function TaskList(props) {
-	const { todos } = props
+	const {
+		todos,
+		toggleCompletedTodo,
+		deleteTodo,
+		editedTodo,
+		updateEditedTodo,
+	} = props
 
 	return (
 		<ul className='todo-list'>
 			{todos.map(todo => (
-				<Task key={todo.id} todo={todo} />
+				<Task
+					key={todo.id}
+					todo={todo}
+					toggleCompletedTodo={toggleCompletedTodo}
+					deleteTodo={deleteTodo}
+					editedTodo={editedTodo}
+					updateEditedTodo={updateEditedTodo}
+				/>
 			))}
 		</ul>
 	)
